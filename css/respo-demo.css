@@ -3,6 +3,10 @@
 
 
 /**/
+* {
+	transition: 1.8s 0s background-color ease-out;
+}
+/**/
 html,
 body {
 
@@ -14,6 +18,7 @@ body {
 	padding: 2%;
 	margin: 0;
 	/*text-shadow: 0px 2px 2px #051126;*/
+	text-align: center;
 }
 
 a,  a:visited {
@@ -50,6 +55,7 @@ nav ul {
 }
 nav li {
 	display: inline-block;
+	text-align: center;
 }
 nav a {
 	display: inline-block;
@@ -62,27 +68,56 @@ nav a {
 /**/
 .respoBox {
 	box-sizing: border-box;
+	display: inline-block;
+	width: 100%;
 
 	background-color: rgb(10,36,83); /*#0a2453*/
 	background-color: rgba(0, 0, 0, 0.35);
 
 	padding: 5%;
 	margin: 2.5% auto;
-	border-radius: 12px;
+	vertical-align: top;
+	border-radius: 7px;
 }
 
 .pageWrapper {
 	padding: 3%;
 	padding-bottom: 4%;
-
+	vertical-align: top;
+	text-align: left;
 }
 
 .pageHeaderTitle {
 	margin-top: 0;
 	margin-bottom: 12px;
 }
+.pageHeaderTitle:before {
+	content: 'by John David Hunt';
+	display: block;
+	width: 85%;
+	color: transparent;
+	position: fixed;
+	top: 0;
+	text-align: center;
+	overflow: hidden;
+}
+.pageHeaderTitle:after {
+		content: '';
+		letter-spacing: 1ex;
+		margin-left: 1em;
+		border-bottom: 2px solid rgba(0, 0, 0, 0.35);;
+}
 .mainArticleTitle {
 	margin-top: 0;
+}
+
+.b-side {
+	display: inline-block;
+}
+
+button,
+.button {
+
 }
 
 /**/
@@ -101,6 +136,10 @@ nav a {
 		width: 100%;
 	}
 
+	.pageHeaderTitle:after {
+		content: 'small';
+		font-size:  0.7em;
+	}
 }
 
 
@@ -108,18 +147,26 @@ nav a {
 
 /*Medium*/
 @media screen and (min-width: 480px) {
+	
 	body {
 		background-color: #ebac15;
 		padding: 1%;
 	}
 	.respoBox {
-		padding: 2%;
+		padding: 3%;
 		margin: 1.5% auto;
 	}
-}
-.pageWrapper {
-	padding: 2%;
-	padding-bottom: 3%;
+	.pageWrapper {
+		padding: 2%;
+		padding-bottom: 3%;
+
+	}
+	.pageHeaderTitle:after {
+		content: 'Medium';
+		font-size:  1em;
+	}
+
+
 
 }
 
@@ -130,38 +177,90 @@ nav a {
 
 /*Large*/
 @media screen and (min-width: 768px) {
+	
 	body {
 		background-color: #7feb15;
 	}
 	.pageWrapper {
-		display: flex;
+
 	}
-	.respoBox {
+	.respoBox,
+	.respoBoxPos {
 		margin: 1.5% auto;
 	
 	}
+	.pageNav {
+		display: inline-block;
+		width: 100%;
+	}
+	.pageNav li {
+		width: auto;
+	}
+	button,
+	.button {
+		width: auto;
+		padding: 12px;
+		margin-right: 2px;
+		white-space: nowrap;
+	}
 	header {
-		flex: 3;
 	}
 	article {
-		flex: 2;
+		max-width: 66%;
 	}
-	aside {
-		flex: 1;
+	.b-side {
+		max-width: 33%;	
+	}
+	aside.respoBox {
+		margin: 0 2% 4.5%;
 	}
 	footer {
-		flex: 3;
 	}
+
+	.pageHeaderTitle:after {
+		content: 'LARGE';
+		font-size:  1.25em;
+	}
+
+
 }
 
 
 /**/
 
-/*Maximum*/
+/*X-LARGE*/
 @media screen and (min-width: 1024px) {
+
 	body {
 		background-color: #1561eb;
 	}
+	.pageHeaderTitle:after {
+		content: 'X-LARGE';
+		font-size:  2em;
+		text-shadow: 	
+						0px 0px 0px #eee,
+						0px 1px 1px #abc,
+						1px 0px 1px #abc,
+						1px 1px 1px #abc,
+						1px 2px 1px #abc,
+						2px 1px 1px #abc,
+						2px 2px 1px #abc,
+						2px 3px 1px #abc,
+						3px 2px 1px #abc,
+						3px 3px 1px #abc,
+						3px 4px 1px #abc,
+						4px 3px 1px #abc,
+						4px 4px 0px #abc,
+						4px 4px 2px rgba(0, 0, 0, 0.35);
+	}
+
+}
+
+
+/**/
+
+.pageWrapper {
+	max-width: 1800px;
 }
 
 
