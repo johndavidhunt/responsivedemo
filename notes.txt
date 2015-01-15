@@ -1,0 +1,15 @@
+Create a demonstration of Responsive Design using a simple series of containers. 
+
+Use media queries to change the background color and the arrangement of the containers as the width of the browser changes.
+
+Small, default styles		#e61313		400px;
+
+Medium, above 480px			#ebac15		480px;
+Large, above 768px 			#7feb15		768px;
+Maximum, above 1024px		#1561eb		1024px;
+
+Content and image assets, as well as our in-class demo, are here: https://github.com/greglunn/responsivedemo.
+
+Build Mobile First™. Start with the smallest size styles, and use min-width @media queries to alter the styles as the page gets wider.
+
+Use Git to commit your work, and push to a repository called "responsivedemo" on GitHub.
